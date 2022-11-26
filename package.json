@@ -1,0 +1,25 @@
+{
+  "name": "color-palette-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch public/scss -o public/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tmchuynh/Color-Palette-Generator.git"
+  },
+  "keywords": [
+    "colors",
+    "generator",
+    "palettes"
+  ],
+  "author": "Tina Huynh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tmchuynh/Color-Palette-Generator/issues"
+  },
+  "homepage": "https://github.com/tmchuynh/Color-Palette-Generator#readme"
+}

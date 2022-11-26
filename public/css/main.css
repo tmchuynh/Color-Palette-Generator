@@ -1,0 +1,28 @@
+.hero {
+  min-height: 50vh;
+  background: #000 url(https://image.freepik.com/free-vector/gradient-geometric-shape-background_78532-307.jpg) center center no-repeat;
+  background-size: cover;
+  position: relative; }
+  .hero:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%); }
+  .hero .hero-content {
+    position: absolute;
+    bottom: 15px;
+    color: #fff; }
+
+.colors {
+  padding: 2rem; }
+  .colors .row {
+    height: 50vh; }
+    .colors .row .col {
+      border: 1px solid black;
+      border-radius: 5%;
+      margin: 1rem; }
+  .colors .colorName {
+    height: fit-content; }
