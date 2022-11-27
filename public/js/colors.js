@@ -5,28 +5,35 @@ input = document.querySelector(".form-control");
 const inputValue = "";
 var letterNumber = /^[0-9a-zA-Z]+$/;
 alert = document.querySelector(".alert");
+var option = "monochrome";
 
+function getColors() {
+    $.get("https://x-colors.herokuapp.com/api/random", function (data) {
+    console.log(data.hex);
+    hex = data.hex.substring(1);
+    console.log(hex);
+    $.get("https://www.thecolorapi.com/scheme?hex=" + hex + "&mode=" + option, function (results) {
+        pallette = [];
+        for (var i = 0; i < results.colors.length; i++) {
+            console.log(results.colors[i].hex.value);
+            pallette.push(results.colors[i].hex.value);
+            colors[i].style.backgroundColor = results.colors[i].hex.value;
+            colorsName[i].innerHTML = results.colors[i].hex.value;
+        }
+    });
+});
+}
 $(document).ready(function () {
+    getColors();
     mode.forEach(element => {
         element.addEventListener("click", function () {
             console.log(element.nextSibling.nextElementSibling.innerHTML);
+            option = element.nextSibling.nextElementSibling.innerHTML;
+            getColors();
         })
     });
 
-    $.get("https://x-colors.herokuapp.com/api/random", function (data) {
-        console.log(data.hex);
-        hex = data.hex.substring(1);
-        console.log(hex);
-        $.get("https://www.thecolorapi.com/scheme?hex=" + hex, function (results) {
-            pallette = [];
-            for (var i = 0; i < results.colors.length; i++) {
-                console.log(results.colors[i].hex.value)
-                pallette.push(results.colors[i].hex.value);
-                colors[i].style.backgroundColor = results.colors[i].hex.value;
-                colorsName[i].innerHTML = results.colors[i].hex.value;
-            }
-        })
-    })
+
 
     input.oninput = function () {
         if (this.value.match(letterNumber)) {
@@ -36,7 +43,7 @@ $(document).ready(function () {
         } else {
             alert.style.display = "block";
             input.value = "";
-            setTimeout(function() {
+            setTimeout(function () {
                 alert.style.display = "none";
             }, 2500);
         }
