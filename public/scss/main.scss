@@ -1,3 +1,8 @@
+i {
+    font-size: 2rem;
+    color: black;
+}
+
 .hero {
     min-height: 50vh;
     background: #000 url(https://image.freepik.com/free-vector/gradient-geometric-shape-background_78532-307.jpg) center center no-repeat;
@@ -63,6 +68,10 @@
     display: none;
 }
 
+.search-bar-text {
+    margin-left: 3rem;
+}
+
 .input-group {
     margin-left: 3rem;
     width: 75%;
@@ -83,12 +92,34 @@
 
         .col {
             border: 1px solid black;
-            border-radius: 5%;
+            border-radius: 25px;
             margin: 1rem;
+        }
+
+        .row {
+            height: 6rem;
+            margin-top: 2.5rem;
+            background-color: #FFF;
+            border: 1px solid black;
+            justify-content: center;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            align-content: center;
+
+            .copied-color {
+                margin: 1rem;
+                p {
+                    margin-bottom: 0;
+                }
+            }
         }
     }
 
     .colorName {
         height: fit-content;
+        .clipboard {
+            display: inline;
+        }
     }
 }
