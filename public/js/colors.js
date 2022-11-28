@@ -8,17 +8,6 @@ alert = document.querySelector(".alert");
 var option = "monochrome";
 
 
-
-const copyContent = async () => {
-    try {
-        await navigator.clipboard.writeText(text);
-        console.log('Content copied to clipboard');
-    } catch (err) {
-        console.error('Failed to copy: ', err);
-    }
-}
-
-
 function getHex() {
     var hex;
     $.get("https://x-colors.herokuapp.com/api/random", function (data) {
@@ -39,14 +28,27 @@ function getColors(hex) {
             colorsName[i].innerHTML = results.colors[i].hex.value;
         }
         addColorDetails();
-
-
     });
+}
+
+function copyText(e) {
+    console.log(e);
+    e.classList.remove("bi-clipboard");
+    e.classList.add("bi-clipboard-check-fill")
+    console.log(e.nextElementSibling)
+    navigator.clipboard.writeText(e.nextElementSibling.firstChild.innerHTML);
+    console.log("content copied");
+
+    setInterval(function () {
+        e.classList.remove("bi-clipboard-check-fill");
+        e.classList.add("bi-clipboard");
+
+    }, 3000)
 }
 
 function addColorDetails() {
     var color;
-    for (var i = 0; i <colorsName.length; i++) {
+    for (var i = 0; i < colorsName.length; i++) {
         console.log(colorsName[i].innerHTML)
         color = colorsName[i].innerHTML;
         console.log(colors[i].firstChild.nextSibling)
