@@ -36,8 +36,13 @@ function copyText(e) {
     e.classList.remove("bi-clipboard");
     e.classList.add("bi-clipboard-check-fill")
     console.log(e.nextElementSibling)
-    navigator.clipboard.writeText(e.nextElementSibling.firstChild.innerHTML);
-    console.log("content copied");
+    try {
+        navigator.clipboard.writeText(e.nextElementSibling.firstChild.innerHTML);
+        console.log("content copied");
+    }catch (err) {
+        console.error("failed to copy: ", err);
+    }
+    
 
     setInterval(function () {
         e.classList.remove("bi-clipboard-check-fill");
