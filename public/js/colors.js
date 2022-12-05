@@ -53,7 +53,7 @@ function changeColors(e) {
 function replaceColor(value, color) {
     classes = value.parentNode.parentNode.classList.value.split(" ");
     number = classes[1].split("color");
-    value.parentNode.parentNode.firstChild.nextElementSibling.firstChild.parentNode.innerText = "#" + color;
+    value.parentNode.parentNode.firstChild.nextElementSibling.firstChild.parentNode.innerHTML = "<i onclick=\"copyText(this)\" class=\"bi bi-clipboard\"></i>" + " #" + color;
     colorsName[number[1] -1 ].innerHTML = "#" + color;
 }
 

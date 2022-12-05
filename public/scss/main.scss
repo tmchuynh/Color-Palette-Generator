@@ -108,10 +108,12 @@ i {
             align-content: center;
 
             .copied-color {
-                margin: 1rem;
                 p {
                     margin-bottom: 0;
                 }
+            }
+            .bi {
+                margin: .5rem;
             }
 
             .changeColor {

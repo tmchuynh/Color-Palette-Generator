@@ -77,10 +77,10 @@ i {
       flex-direction: row-reverse;
       align-items: center;
       align-content: center; }
-      .colors .row .row .copied-color {
-        margin: 1rem; }
-        .colors .row .row .copied-color p {
-          margin-bottom: 0; }
+      .colors .row .row .copied-color p {
+        margin-bottom: 0; }
+      .colors .row .row .bi {
+        margin: .5rem; }
       .colors .row .row .changeColor {
         height: 100%; }
   .colors .colorName {
