@@ -1,7 +1,8 @@
 colors = document.querySelectorAll(".palette .col");
 colorsName = document.querySelectorAll(".colorName .col");
 mode = document.querySelectorAll(".stv-radio-button");
-input = document.querySelector(".form-control");
+input = document.querySelector(".searchColor");
+colorText = document.querySelectorAll(".copied-color");
 const inputValue = "";
 var letterNumber = /^[0-9a-zA-Z]+$/;
 alert = document.querySelector(".alert");
@@ -29,6 +30,31 @@ function getColors(hex) {
         }
         addColorDetails();
     });
+}
+
+function changeColors(e) {
+    var color;
+    console.log(colorText);
+    container = e.parentNode.parentNode;
+    e.oninput = function() {
+        console.log(this.value);
+    }
+    e.addEventListener("keydown", function(e) {
+        if (e.which == 13 && this.value.length == 6) {
+            console.log("Enter");
+            color = this.value;
+            console.log(color);
+            container.style.backgroundColor = "#" +color;
+            replaceColor(this, color);
+        }
+    })
+}
+
+function replaceColor(value, color) {
+    classes = value.parentNode.parentNode.classList.value.split(" ");
+    number = classes[1].split("color");
+    value.parentNode.parentNode.firstChild.nextElementSibling.firstChild.parentNode.innerText = "#" + color;
+    colorsName[number[1] -1 ].innerHTML = "#" + color;
 }
 
 function copyText(e) {
@@ -65,7 +91,6 @@ function addColorDetails() {
         p.innerHTML = color;
         div.appendChild(p);
     }
-
 }
 
 $(document).ready(function () {
@@ -105,6 +130,5 @@ $(document).ready(function () {
                 alert.style.display = "none";
             }, 2500);
         }
-
     }
 })

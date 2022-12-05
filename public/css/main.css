@@ -81,6 +81,8 @@ i {
         margin: 1rem; }
         .colors .row .row .copied-color p {
           margin-bottom: 0; }
+      .colors .row .row .changeColor {
+        height: 100%; }
   .colors .colorName {
     height: fit-content; }
     .colors .colorName .clipboard {

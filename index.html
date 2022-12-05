@@ -8,7 +8,10 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css" integrity="sha512-YFENbnqHbCRmJt5d+9lHimyEMt8LKSNTMLSaHjvsclnZGICeY/0KYEeiHwD1Ux4Tcao0h60tdcMv+0GljvWyHg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.2/font/bootstrap-icons.min.css"
+        integrity="sha512-YFENbnqHbCRmJt5d+9lHimyEMt8LKSNTMLSaHjvsclnZGICeY/0KYEeiHwD1Ux4Tcao0h60tdcMv+0GljvWyHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="public/css/main.css">
 </head>
 
@@ -62,11 +65,11 @@
 
     <div class="alert alert-secondary" role="alert">
         INVALID INPUT! Please input a HEX color without #
-      </div>
+    </div>
 
-      <div class="search-bar-text">
+    <div class="search-bar-text">
         <code>Search for a pallette that matches a specifc color: </code>
-      </div>
+    </div>
     <div class="input-group mb-3 rounded-pill overflow-hidden border">
         <span class="input-group-text bg-white border-0 pe-1" id="basic-addon1">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
@@ -75,21 +78,22 @@
                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
             </svg>
         </span>
-        <input type="search" class="form-control hide-focus border-0" placeholder="Search" aria-label="Username"
+        <input type="search" class="form-control searchColor hide-focus border-0" placeholder="Search" aria-label="color"
             aria-describedby="basic-addon1">
     </div>
 
     <div class="container-fluid text-center colors">
         <div class="row palette">
             <div class="col color1">
-                <div class="row">
+                <div class="row colorText">
                     <i onclick="copyText(this)" class="bi bi-clipboard"></i>
                 </div>
                 <div class="row">
-                    
+                    <input onclick="changeColors(this)" type="search" class="form-control hide-focus changeColor border-0" placeholder="Search"
+                        aria-label="changeColor" aria-describedby="basic-addon2">
                 </div>
                 <div class="row">
-                    
+
                 </div>
             </div>
             <div class="col color2">
@@ -97,10 +101,11 @@
                     <i onclick="copyText(this)" class="bi bi-clipboard"></i>
                 </div>
                 <div class="row">
-                    
+                    <input onclick="changeColors(this)" type="search" class="form-control hide-focus changeColor border-0" placeholder="Search"
+                    aria-label="changeColor" aria-describedby="basic-addon2">
                 </div>
                 <div class="row">
-                    
+
                 </div>
             </div>
             <div class="col color3">
@@ -108,10 +113,11 @@
                     <i onclick="copyText(this)" class="bi bi-clipboard"></i>
                 </div>
                 <div class="row">
-                    
+                    <input onclick="changeColors(this)" type="search" class="form-control hide-focus changeColor border-0" placeholder="Search"
+                    aria-label="changeColor" aria-describedby="basic-addon2">
                 </div>
                 <div class="row">
-                    
+
                 </div>
             </div>
             <div class="col color4">
@@ -119,10 +125,11 @@
                     <i onclick="copyText(this)" class="bi bi-clipboard"></i>
                 </div>
                 <div class="row">
-                    
+                    <input onclick="changeColors(this)" type="search" class="form-control hide-focus changeColor border-0" placeholder="Search"
+                    aria-label="changeColor" aria-describedby="basic-addon2">
                 </div>
                 <div class="row">
-                    
+
                 </div>
             </div>
             <div class="col color5">
@@ -130,10 +137,11 @@
                     <i onclick="copyText(this)" class="bi bi-clipboard"></i>
                 </div>
                 <div class="row">
-                    
+                    <input onclick="changeColors(this)" type="search" class="form-control hide-focus changeColor border-0" placeholder="Search"
+                    aria-label="changeColor" aria-describedby="basic-addon2">
                 </div>
                 <div class="row">
-                    
+
                 </div>
             </div>
         </div>
