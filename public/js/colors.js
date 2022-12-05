@@ -122,6 +122,9 @@ $(document).ready(function () {
         element.addEventListener("click", function () {
             // console.log(element.nextSibling.nextElementSibling.innerHTML);
             option = element.nextSibling.nextElementSibling.innerHTML;
+            while (colorText.parentNode.firstChild) {
+                colorText.parentNode.removeChild(colorText.parentNode.lastChild);
+            }
             getColors(getHex());
 
 
