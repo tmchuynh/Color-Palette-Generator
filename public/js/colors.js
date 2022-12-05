@@ -32,6 +32,11 @@ function getColors(hex) {
     });
 }
 
+/*
+ * Changes the color of the background
+ * 
+ * @param {any} e 
+* */
 function changeColors(e) {
     var color;
     console.log(colorText);
@@ -50,6 +55,12 @@ function changeColors(e) {
     })
 }
 
+/*
+ * Updates the hex color below the container and above (next to the copy icon)
+ * 
+ * @param {any} value 
+ * @param {any} color 
+* */
 function replaceColor(value, color) {
     classes = value.parentNode.parentNode.classList.value.split(" ");
     number = classes[1].split("color");
@@ -57,6 +68,11 @@ function replaceColor(value, color) {
     colorsName[number[1] -1 ].innerHTML = "#" + color;
 }
 
+/*
+ * Copy hex color functionality
+ * 
+ * @param {any} e 
+* */
 function copyText(e) {
     console.log(e);
     e.classList.remove("bi-clipboard");
@@ -77,6 +93,10 @@ function copyText(e) {
     }, 3000)
 }
 
+/*
+ *  Adds the hex color to the bottom of the container 
+ *  for easy visibility
+ */
 function addColorDetails() {
     var color;
     for (var i = 0; i < colorsName.length; i++) {
@@ -95,6 +115,9 @@ function addColorDetails() {
 
 $(document).ready(function () {
     getColors();
+    /*
+     * Gets the color by mode selected 
+     */
     mode.forEach(element => {
         element.addEventListener("click", function () {
             // console.log(element.nextSibling.nextElementSibling.innerHTML);
@@ -105,7 +128,9 @@ $(document).ready(function () {
         })
     });
 
-
+    /*
+     *  Search color bar under modes
+     */
     input.addEventListener("keydown", function (e) {
         if (e.which == 13 && input.value.length == 6) {
             // console.log("Enter");
